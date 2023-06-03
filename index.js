@@ -125,5 +125,7 @@ loginForm.addEventListener('submit', async (e) => {
   } catch (e) {
     console.log(`The error is ${e}. Lets handle it`);
     window.location.href = 'https://payproglobal.com/';
+    spinner.classList.add('hide');
+    formButton.classList.remove('hide');
   }
 });
