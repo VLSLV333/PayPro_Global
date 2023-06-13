@@ -16,10 +16,11 @@ let linkHasError = true;
 let formHasError = true;
 
 const emailRegEx = /^.+@.+\.[a-z]{2,}$/i;
-const linkRegEx = /^https:\/\//;
+const linkRegEx = /^https:\/\/([a-z]|-|[0-9]){2,20}\.([a-z]|-|[0-9]){2,15}\.([a-z]|-|[0-9]){2,28}$/i;
 
 function setInputHasError(inpId, helpTextId, text) {
   inpId.classList.add('border-danger');
+  inpId.classList.add('text-danger');
 
   helpTextId.classList.add('text-danger');
   helpTextId.classList.remove('toggleHide');
@@ -29,6 +30,7 @@ function setInputHasError(inpId, helpTextId, text) {
 
 function setInputCorrect(inpId, helpTextId, text) {
   inpId.classList.remove('border-danger');
+  inpId.classList.remove('text-danger');
 
   helpTextId.classList.remove('text-danger');
   helpTextId.classList.add('toggleHide');
